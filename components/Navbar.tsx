@@ -1,4 +1,10 @@
-import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { 
+    SignInButton, 
+    SignUpButton, 
+    SignedIn, 
+    SignedOut, 
+    UserButton 
+} from "@clerk/nextjs";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -9,8 +15,12 @@ const Navbar = () => {
             </Link>
             <div className="font-semibold flex gap-4">
                 <SignedOut>
-                    <SignInButton mode="modal" />
-                    <SignUpButton mode="modal" />
+                    <SignInButton mode="modal">
+                        <button>Login</button>
+                    </SignInButton>
+                    <SignUpButton mode="modal">
+                        <button>Register</button>
+                    </SignUpButton>
                 </SignedOut>
                 <SignedIn>
                     <UserButton showName userProfileMode="modal" />
